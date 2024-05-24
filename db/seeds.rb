@@ -7,3 +7,13 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+
+teacher = FactoryBot.create(:user, name: 'Mr. Johnson', role: :teacher)
+
+FactoryBot.create(:course, teacher:)
+
+best_student = FactoryBot.create(:user, name: 'Diego', role: :student)
+
+20.times do |n|
+  FactoryBot.create(:user, name: "Generic Student Number #{n}", role: :student)
+end

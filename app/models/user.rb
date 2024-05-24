@@ -1,6 +1,6 @@
 class User < ApplicationRecord
   # Teacher relations
-  has_many :courses
+  has_many :courses, foreign_key: 'teacher_id'
 
   # Students relations
   has_many :enrollments
