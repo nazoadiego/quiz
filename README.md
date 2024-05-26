@@ -28,6 +28,17 @@ The schema consists of the following main entities:
 - **Exams**: Represents specific instances of exams taken by students, based on templates.
 - **Evaluations**: Represents the evaluation of an exam by a teacher
 
+### The workflow
+
+With this model this is is how it would work:
+
+1. An admin would go into a screen and they will create an ExamTemlate. They will see the different types of questions and add them as needed inside the column quiz_data
+2. Once they are done, an they have submitted the template, an admin will have the ability to create exams for all the students belonging to the course. Specifying as well what is the due date for it. Everything that was defined by the admin in the ExamTemplate will carry over to the individual instances of each student exam.
+3. Student will populate the answer attribute for each question inside our quiz_data in Exam
+4. If the exam was completed before the due date, the student will be able to submit the exam.
+5. Once the exam has been submitted, the admin will evaluate the exam and we will validate that the total score is valid.
+6. With the evaluations created, we will be able to see the results of our students and different statistics.
+
 #### Decisions Taken
 
 1. **Single User Model with Roles**

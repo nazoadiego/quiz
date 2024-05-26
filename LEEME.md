@@ -28,6 +28,16 @@ El esquema consiste en las siguientes entidades principales:
 - **Exams (Exámenes)**: Representa instancias específicas de exámenes realizados por estudiantes, basados en plantillas.
 - **Evaluations (Evaluaciones)**: Representa la evaluación de un examen por un profesor.
 
+#### El workflow
+Con este modelo, así es como funcionaría:
+
+1. Un administrador iría a una pantalla y crearía una ExamTemplate. Verán los diferentes tipos de preguntas y las agregarán según sea necesario dentro de la columna quiz_data.
+2. Una vez que hayan terminado y enviado la plantilla, un administrador tendrá la capacidad de crear exámenes para todos los estudiantes pertenecientes al curso, especificando también cuál es la fecha de vencimiento. Todo lo que fue definido por el administrador en la ExamTemplate se trasladará a las instancias individuales de cada examen de estudiante.
+3. El estudiante completará el atributo answer para cada pregunta dentro de nuestro quiz_data en Exam.
+4. Si el examen fue completado antes de la fecha de vencimiento, el estudiante podrá enviar el examen.
+5. Una vez que el examen haya sido enviado, el administrador evaluará el examen y validaremos que la puntuación total sea válida.
+6. Con las evaluaciones creadas, podremos ver los resultados de nuestros estudiantes y diferentes estadísticas.
+
 #### Decisiones Tomadas
 
 1. **Modelo Único de Usuario con Roles** Aunque no especificado en los requisitos, tener claramente definidas las relaciones estudiante/profesor/cursos da una visión más amplia de toda la aplicación.
