@@ -1,3 +1,5 @@
+## Quiz - Technical Challenge
+
 #### Summary
 
 This is a technical proposal for an App where we have manage the creation of different exams by an admin.
@@ -29,7 +31,7 @@ The schema consists of the following main entities:
 #### Decisions Taken
 
 1. **Single User Model with Roles**
-Although not specified in the requirements, having the student/teacher/courses relationships clearly defined gives a bigger picture of the whole app.
+   Although not specified in the requirements, having the student/teacher/courses relationships clearly defined gives a bigger picture of the whole app.
 
 - **Benefits**: Simplifies user management by using a single table for both teachers and students, with a role attribute to differentiate them. Decided to go with an enum as it is easily extensible (maybe we want the distinction between a teacher that can only modifies their courses exams vs an admin that can modify all)
 
@@ -39,6 +41,7 @@ Although not specified in the requirements, having the student/teacher/courses r
 - **Disadvantages**: JSONB columns can be less performant, and for querying specific attributes (specially nested) it can be a little tricky.
 
 4. **Versioning the templates**
+
 - **Benefits**: The exam templates are without a doubt subject to change. We added a version column with a timestamp so that we can keep track of it. If we wanted to change some exams, we would definitely be careful of only modifying the ones that we are interested in.
 
 5. **Question templates and not persisting them**
@@ -64,7 +67,7 @@ class QuestionTemplate
     max_score: nil,
     answer_score: nil,
     options: [],
-    answer: nil, 
+    answer: nil,
     correct_answers: []
   }
 
@@ -77,8 +80,8 @@ class QuestionTemplate
   }
 
   ALL_TYPES = [
-    ONE_CORRECT_ANSWER, 
-    MULTIPLE_CORRECT_ANSWERS, 
+    ONE_CORRECT_ANSWER,
+    MULTIPLE_CORRECT_ANSWERS,
     REDACTION
   ]
 end

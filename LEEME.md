@@ -1,3 +1,5 @@
+## Quiz - Prueba Técnica
+
 #### Resumen
 
 Esta es una propuesta técnica para una aplicación donde gestionamos la creación de diferentes exámenes por un administrador.
@@ -92,5 +94,3 @@ Si surgiera un nuevo tipo de pregunta, sería tan fácil como cambiar el código
 Surgen algunas preguntas: ¿queremos un administrador que gestione todo Y profesores que solo gestionen sus propios cursos? ¿De qué maneras pueden cambiar los exámenes en el futuro? ¿Qué tipo de estadísticas nos interesan?
 
 La propuesta dada intenta hacer las cosas lo más simple posible, con la mayor flexibilidad que podamos. Que podamos meternos a fondo en el problema y adaptarnos con facilidad.
-
-Link: [[Quizz taker - Dekuple]]
